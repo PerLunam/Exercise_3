@@ -37,6 +37,9 @@ public:
     //Destruktor
     virtual ~Fighter()
     {
+        //Grafische Trennung der Inhalte
+        std::cout << "------------------------------" << std::endl;
+
         std::cout << "Fighter " << this->getName() << " verlässt das Abenteuer und ärgert andere Held*Innen." << std::endl;
     }
 
@@ -50,7 +53,7 @@ public:
     void setStrength(int newStrength);
 };
 
-//Operatorenüberladung des Opterators "<<"
+//Operatorenüberladung des Operators "<<"
 std::ostream& operator<<(std::ostream& out, const Fighter& f);
 
 #endif //EXERCISE_3_FIGHTER_H

@@ -50,7 +50,7 @@ class Item
     void setIsValid(bool newIsValid);
 };
 
-//Operatorenüberladung des Opterators "<<"
+//Operatorenüberladung des Operators "<<"
 //std::ostream& operator<<(std::ostream& out, const Item& i);
 
 #endif //EXERCISE_3_ITEM_H

@@ -26,8 +26,7 @@ int Hero::addEquipmentItem(const Item& item)
         {
             this->hero_gear[i].setName(item.getName());
             this->hero_gear[i].setValue(item.getValue());
-            //this->hero_gear[i].isValid(true);
-            this->hero_gear[i].isIsValid();
+            this->hero_gear[i].setIsValid(true);
 
             //Bei erfolgreicher Platzierung soll der Index des Items ausgegeben werden
             return i;
@@ -39,58 +38,83 @@ int Hero::addEquipmentItem(const Item& item)
 
 Item Hero::removeEquipmentItem(int slot)
 {
-    if(this->hero_gear[slot].isIsValid())
+    if(slot >= 0 && slot < MAX_EQUIPMENT_SIZE)
     {
-        this->hero_gear[slot].setIsValid(false);
-        std::cout << "Das Item " << this->hero_gear[slot].getName() << " wurde aus dem Invenatr von " << this->getName() << " entfernt." << std::endl;
-        return this->hero_gear[slot];
-    } else
-    {
-        //Falls alle Plätze belegt oder der Slot fehlerhaft initialisiert sein,
-        //wird der Default-Konstruktor verwendet und das Item "Default-Item" mit isValid "false" ausgegeben
-        return Item();
+        if(this->hero_gear[slot].isIsValid())
+        {
+            this->hero_gear[slot].setIsValid(false);
+            std::cout << "Das Item " << this->hero_gear[slot].getName() << " wurde aus dem Inventar von " << this->getName() << " entfernt." << std::endl;
+            return this->hero_gear[slot];
+        }
     }
+    //Falls alle Plätze belegt oder der Slot fehlerhaft initialisiert sein,
+    //wird der Default-Konstruktor verwendet und das Item "Default-Item" mit isValid "false" ausgegeben
+    return Item();
 }
 
 void Hero::sellItem(int index)
 {
     /*
-     * Erster Ansatz, aber fehlerhaft
-    //Pointer auf das Item am angegebenen Index
-    Item *sellItem = this->getInventory(index);
-
-    //Prüfung, ob das gewählte Item mit "true" initialisiert wurde
-    //falls ja, wird der Wert auf "false" gesetzt
-    if(sellItem->isIsValid())
-    if(this->getInventory(index)->isIsValid())
+    //Alternative Umsetzung - ausschließlicher Verkauf der Items aus "inventory"
+    if(index >= 0 && index < MAX_INVENTORY_SIZE)
     {
-        sellItem->setIsValid(false);
+        if(this->getInventory(index)->isIsValid())
+        {
+            this->getInventory(index)->setIsValid(false);
+            this->setGold(this->getGold() + this->getInventory(index)->getValue());
+            //this->setGold(this->getInventory(index)->getValue());
 
-        //Berechnung des neuen Guthabens
-        //setGold/ neuer Wert = getGold/ alter Wert + Wert des Items
-        this->setGold(this->getGold() + sellItem->getValue());
+            //Ausgabe einer Bestätigung über das Terminal
+            std::cout << "Der Gegenstand " << this->getInventory(index)->getName() << " wurde für "
+                      << this->getInventory(index)->getValue() << " Gold verkauft. "
+                      << this->getName() << " besitzt nun " << this->getGold() << " Gold." << std::endl;
+        }
     }
     */
 
-    //Alternative Umsetzung
-    if(this->getInventory(index)->isIsValid())
+    //Alternative Umsetzung - Verkauf der Items aus "inventory" und "hero_gear"
+    if(index >= 0 && index < MAX_EQUIPMENT_SIZE)
     {
-        this->getInventory(index)->setIsValid(false);
-        this->setGold(this->getGold() + this->getInventory(index)->getValue());
-        //this->setGold(this->getInventory(index)->getValue());
+        if(this->getEquipment(index)->isIsValid())
+        {
+            this->getEquipment(index)->setIsValid(false);
+            this->setGold(this->getGold() + this->getEquipment(index)->getValue());
+            //this->setGold(this->getEquipment(index)->getValue());
 
-        //Ausgabe einer Bestätigung über das Terminal
-        std::cout << "Der Gegenstand " << this->getInventory(index)->getName() << " wurde für " << this->getInventory(index)->getValue() << " Gold verkauft. "
-            << this->getName() << " besitzt nun " << this->getGold() << " Gold." << std::endl;
-    } else if(this->getEquipment(index)->isIsValid())
+            //Ausgabe einer Bestätigung über das Terminal
+            std::cout << "Der Gegenstand " << this->getEquipment(index)->getName() << " wurde für "
+                      << this->getEquipment(index)->getValue() << " Gold verkauft. "
+                      << this->getName() << " besitzt nun " << this->getGold() << " Gold." << std::endl;
+        } else
+        {
+            if(this->getInventory(index)->isIsValid())
+            {
+                this->getInventory(index)->setIsValid(false);
+                this->setGold(this->getGold() + this->getInventory(index)->getValue());
+                //this->setGold(this->getInventory(index)->getValue());
+
+                //Ausgabe einer Bestätigung über das Terminal
+                std::cout << "Der Gegenstand " << this->getInventory(index)->getName() << " wurde für "
+                          << this->getInventory(index)->getValue() << " Gold verkauft. "
+                          << this->getName() << " besitzt nun " << this->getGold() << " Gold." << std::endl;
+            }
+        }
+    } else
     {
-        this->getEquipment(index)->setIsValid(false);
-        this->setGold(this->getGold() + this->getEquipment(index)->getValue());
-        //this->setGold(this->getEquipment(index)->getValue());
+        if(index >= 0 && index < MAX_INVENTORY_SIZE)
+        {
+            if(this->getInventory(index)->isIsValid())
+            {
+                this->getInventory(index)->setIsValid(false);
+                this->setGold(this->getGold() + this->getInventory(index)->getValue());
+                //this->setGold(this->getInventory(index)->getValue());
 
-        //Ausgabe einer Bestätigung über das Terminal
-        std::cout << "Der Gegenstand " << this->getEquipment(index)->getName() << " wurde für " << this->getEquipment(index)->getValue() << " Gold verkauft. "
-                  << this->getName() << " besitzt nun " << this->getGold() << " Gold." << std::endl;
+                //Ausgabe einer Bestätigung über das Terminal
+                std::cout << "Der Gegenstand " << this->getInventory(index)->getName() << " wurde für "
+                          << this->getInventory(index)->getValue() << " Gold verkauft. "
+                          << this->getName() << " besitzt nun " << this->getGold() << " Gold." << std::endl;
+            }
+        }
     }
 }
 

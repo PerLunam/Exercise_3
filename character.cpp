@@ -18,18 +18,10 @@ bool Character::fight(Character *enemy)
         enemy->attack(this);
     } while(this->getHealth() > 0 && enemy->getHealth() > 0);
 
-    /*
-     * Erster Ansatz, welcher aber nicht fehlerfrei funktionierte -> Ausgabe: "Matthias fiel in Ohnmacht! Annina hat noch 233436045 Lebenspunkte."
-    if(this->getHealth() > 0 && enemy->getHealth() > 0)
-    {
-        this->attack(enemy);
+    std::cout << enemy->getName() << " fiel in Ohnmacht! " << this->getName() << " hat noch " << this->getHealth() << " Lebenspunkte." << std::endl;
 
-        if(enemy->getHealth() > 0)
-        {
-            enemy->attack(this);
-        }
-    }
-    */
+    //Grafische Trennung der Inhalte
+    std::cout << "------------------------------" << std::endl;
 
     //Falls Hero gewinnt, wird hier "true" zurückgegeben
     return this->getHealth() > 0;
@@ -43,8 +35,7 @@ int Character::addInventarItem(const Item &item)
         {
             this->inventory[i].setName(item.getName());
             this->inventory[i].setValue(item.getValue());
-            //this->inventory[i].setIsValid(true);
-            this->inventory[i].setIsValid(item.isIsValid());
+            this->inventory[i].setIsValid(true);
 
             //Bei erfolgreicher Platzierung soll der Index des Items ausgegeben werden
             return i;
@@ -92,11 +83,21 @@ Item Character::retrieveRandomLoot(Character *enemy)
         //Das entsprechend Item wird dem Inventar des Helden/ der Heldin beigefügt
         this->addInventarItem(lootItem);
 
+        std::cout << "Des einen Glück, des anderen Leid. " << this->getName() << " hat sich \"" << enemy->getInventory(rndNumber)->getName() << "\" redlich verdient." << std::endl;
+
+        //Grafische Trennung der Inhalte
+        std::cout << "------------------------------" << std::endl;
+
         return lootItem;
     } else
     {
         //Falls alle Plätze belegt oder der Slot fehlerhaft initialisiert sein,
         //wird der Default-Konstruktor verwendet und das Item "Default-Item" mit isValid "false" ausgegeben
+        std::cout << "Kein Platz vorhanden. " << enemy->getInventory(rndNumber)->getName() << " bleibt " << this->getName() << " leider verwehrt." << std::endl;
+
+        //Grafische Trennung der Inhalte
+        std::cout << "------------------------------" << std::endl;
+
         return Item();
     }
 }
@@ -158,7 +159,7 @@ Item *Character::getInventory(int index)
     return &item;
 }
 
-//Operatorenüberladung des Opterators "<<"
+//Operatorenüberladung des Operators "<<"
 std::ostream& operator<<(std::ostream& out, const Character& c)
 {
     std::cout << c.getName() << " mit " << c.getHealth() << " Lebenspunkten, " << c.getArmor() << " Rüstungspunkte, " << c.getMR() << " Magieresistenz und " << c.getGold() << " Gold." << std::endl;

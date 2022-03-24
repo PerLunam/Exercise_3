@@ -84,7 +84,7 @@ public:
     Item *getInventory(int index);
 };
 
-//Operatorenüberladung des Opterators "<<"
+//Operatorenüberladung des Operators "<<"
 std::ostream& operator<<(std::ostream& out, const Character& c);
 
 #endif //EXERCISE_3_CHARACTER_H

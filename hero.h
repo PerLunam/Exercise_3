@@ -45,8 +45,10 @@ public:
     //Destruktor
     virtual ~Hero()
     {
+        //Grafische Trennung der Inhalte
+        std::cout << "------------------------------" << std::endl;
+
         std::cout << "Hero " << this->getName() << " verabschiedet sich und geht voller Stolz der untergehenden Sonne entgegen." << std::endl;
-        //std::cout << this->getType() << " " << this->getName() << " verabschiedet sich und geht voller Stolz der untergehenden Sonne entgegen." << std::endl;
     }
 
     //----------------------------- Objektfunktionen -----------------------------
@@ -64,7 +66,7 @@ public:
     Item *getEquipment(int index);
 };
 
-//Operatorenüberladung des Opterators "<<"
+//Operatorenüberladung des Operators "<<"
 std::ostream& operator<<(std::ostream& out, const Hero& h);
 
 #endif //EXERCISE_3_HERO_H

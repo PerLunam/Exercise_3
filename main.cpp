@@ -23,6 +23,7 @@ int main()
     annina.addEquipmentItem(Item("Rosenlanze", 300));
     annina.addEquipmentItem(Item("Trank der Stärke", 25));
 
+    //Grafische Trennung der Inhalte
     std::cout << "------------------------------" << std::endl;
 
     //Initialize Fighter matthias
@@ -31,6 +32,7 @@ int main()
     matthias.addInventarItem(Item("Silberaxt", 170));
     matthias.addInventarItem(Item("Ahornstab", 150));
 
+    //Grafische Trennung der Inhalte
     std::cout << "------------------------------" << std::endl;
 
     //Initialize Sorcerer pascal
@@ -42,64 +44,13 @@ int main()
     //Grafische Trennung der Inhalte
     std::cout << "------------------------------" << std::endl;
 
-    /*
-     * Erster Ansatz
+    //Ansatz mit einer nested if-Loop
     if(annina.fight(&matthias))
     {
-        std::cout << matthias.getName() << " fiel in Ohnmacht! " << annina.getName() << " hat noch " << annina.getHealth() << " Lebenspunkte." << std::endl;
         annina.retrieveRandomLoot(&matthias);
-
-        for(int i = 0; i < MAX_INVENTORY_SIZE; i++)
-        {
-            for(int j = 0; j < MAX_EQUIPMENT_SIZE; j++)
-            {
-                annina.sellItem(j);
-            }
-            annina.sellItem(i);
-        }
-
-    } else
-    {
-        std::cout << annina.getName() << " fiel in Ohnmacht!" << std::endl;
-        return 0;
-    }
-
-    //Grafische Trennung der Inhalte
-    std::cout << "------------------------------" << std::endl;
-
-    if(annina.fight(&pascal))
-    {
-        std::cout << pascal.getName() << " fiel in Ohnmacht! " << annina.getName() << " hat noch " << annina.getHealth() << " Lebenspunkte." << std::endl;
-        annina.retrieveRandomLoot(&pascal);
-
-        for(int i = 0; i < MAX_INVENTORY_SIZE; i++)
-        {
-            for(int j = 0; j < MAX_EQUIPMENT_SIZE; j++)
-            {
-                annina.sellItem(j);
-            }
-            annina.sellItem(i);
-        }
-
-    } else
-    {
-        std::cout << annina.getName() << " fiel in Ohnmacht!" << std::endl;
-        return 0;
-    }
-    */
-
-    //(Eleganterer?) Ansatz mit einer nested if-Loop
-    if(annina.fight(&matthias))
-    {
-        std::cout << matthias.getName() << " fiel in Ohnmacht! " << annina.getName() << " hat noch " << annina.getHealth() << " Lebenspunkte." << std::endl;
-        annina.retrieveRandomLoot(&matthias);
-
-        //Grafische Trennung der Inhalte
-        std::cout << "------------------------------" << std::endl;
 
         if(annina.fight(&pascal))
         {
-            std::cout << pascal.getName() << " fiel in Ohnmacht! " << annina.getName() << " hat noch " << annina.getHealth() << " Lebenspunkte." << std::endl;
             annina.retrieveRandomLoot(&pascal);
 
             //Erster Ansatz - Verwendung der "sellItem"-Funktion innerhalb einer nested Loop
@@ -111,21 +62,10 @@ int main()
                 }
                 annina.sellItem(i);
             }
-
-            /* Zweiter Ansatz - getrennte for-Loops
-            for(int i = 0; i < MAX_INVENTORY_SIZE; i++)
-            {
-                annina.sellItem(i);
-            }
-
-            for(int j = 0; j < MAX_EQUIPMENT_SIZE; j++)
-            {
-                annina.sellItem(j);
-            }
-            */
         }
     } else
     {
+        //Falls die Heldin verliert...
         std::cout << annina.getName() << " fiel in Ohnmacht!" << std::endl;
         return 0;
     }

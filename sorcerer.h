@@ -37,6 +37,9 @@ public:
     //Destruktor
     virtual ~Sorcerer()
     {
+        //Grafische Trennung der Inhalte
+        std::cout << "------------------------------" << std::endl;
+
         std::cout << "Sorcerer " << this->getName() << " verlässt das Abenteuer und ärgert andere Held*Innen." << std::endl;
     }
 
@@ -50,7 +53,7 @@ public:
     void setMagicPower(int newMagicPower);
 };
 
-//Operatorenüberladung des Opterators "<<"
+//Operatorenüberladung des Operators "<<"
 std::ostream& operator<<(std::ostream& out, const Sorcerer& s);
 
 #endif //EXERCISE_3_SORCERER_H

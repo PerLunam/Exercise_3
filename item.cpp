@@ -7,7 +7,6 @@
 const std::string &Item::getName() const
 {
     return this->item_name;
-    //return item_name;
 }
 
 void Item::setName(const std::string &newName)
