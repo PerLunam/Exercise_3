@@ -23,13 +23,13 @@ public:
     NPC(const std::string &char_name, int char_health, int char_gold, int char_armor, int char_mr)
             : Character(char_name, char_health, char_gold, char_armor, char_mr)
     {
-        std::cout << "Konstruktor: " << char_name << std::endl;
+        //std::cout << "NPC::Constructor: " << char_name << std::endl;
     }
 
     //Destruktor
     virtual ~NPC()
     {
-        std::cout << "Calling NPC::Destructor" << std::endl;
+        //std::cout << "Calling NPC::Destructor" << std::endl;
         //std::cout << this->getType() << " " << this->getName() << " verabschiedet sich und geht voller Stolz der untergehenden Sonne entgegen." << std::endl;
     }
 

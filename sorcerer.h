@@ -23,7 +23,7 @@ public:
     //Default
     Sorcerer() : char_name("Default-Sorcerer")
     {
-        std::cout << "Konstruktor: " << char_name << std::endl;
+        std::cout << "Sorcerer::Constructor: " << char_name << std::endl;
     }
     */
 
@@ -31,13 +31,13 @@ public:
     Sorcerer(const std::string &char_name, int char_health, int char_gold, int char_armor, int char_mr, int magicPower)
             : NPC(char_name, char_health, char_gold, char_armor, char_mr), magicPower(magicPower), typ(typeSorcerer)
     {
-        std::cout << "Konstruktor: " << char_name << std::endl;
+        std::cout << "Sorcerer::Constructor: " << char_name << std::endl;
     }
 
     //Destruktor
     virtual ~Sorcerer()
     {
-        std::cout << this->getType() << " " << &this->getName() << " verlässt das Abenteuer und ärgert andere Helden*Innen." << std::endl;
+        std::cout << "Sorcerer " << this->getName() << " verlässt das Abenteuer und ärgert andere Helden*Innen." << std::endl;
     }
 
     //----------------------------- Objektfunktionen -----------------------------

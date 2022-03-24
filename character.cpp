@@ -12,9 +12,14 @@ bool Character::fight(Character *enemy)
     std::cout << enemy->getName() << " fordert " << this->getName() << " zu einem Kampf um Ruhm und Ehre heraus." << std::endl;
 
     //Lösung mithilfe einer Do-While-Loop
+    do
+    {
+        this->attack(enemy);
+        enemy->attack(this);
+    } while(this->getHealth() > 0 && enemy->getHealth() > 0);
 
-
-
+    /*
+     * Erster Ansatz, welcher aber nicht fehlerfrei funktionierte -> Ausgabe: "Matthias fiel in Ohnmacht! Annina hat noch 233436045 Lebenspunkte."
     if(this->getHealth() > 0 && enemy->getHealth() > 0)
     {
         this->attack(enemy);
@@ -24,6 +29,9 @@ bool Character::fight(Character *enemy)
             enemy->attack(this);
         }
     }
+    */
+
+    //Falls Hero gewinnt, wird hier "true" zurückgegeben
     return this->getHealth() > 0;
 }
 

@@ -25,7 +25,7 @@ public:
     //Default
     Hero() : char_name("Default-Hero")
     {
-        std::cout << "Konstruktor: " << char_name << std::endl;
+        std::cout << "Hero::Constructor: " << char_name << std::endl;
     }
     */
 
@@ -39,13 +39,14 @@ public:
             this->hero_gear[i] = Item();
         }
 
-        std::cout << "Konstruktor: " << char_name << std::endl;
+        std::cout << "Hero::Constructor: " << char_name << std::endl;
     }
 
     //Destruktor
     virtual ~Hero()
     {
-        std::cout << this->getType() << " " << this->getName() << " verabschiedet sich und geht voller Stolz der untergehenden Sonne entgegen." << std::endl;
+        std::cout << "Hero " << this->getName() << " verabschiedet sich und geht voller Stolz der untergehenden Sonne entgegen." << std::endl;
+        //std::cout << this->getType() << " " << this->getName() << " verabschiedet sich und geht voller Stolz der untergehenden Sonne entgegen." << std::endl;
     }
 
     //----------------------------- Objektfunktionen -----------------------------
