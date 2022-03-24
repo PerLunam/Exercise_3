@@ -1,0 +1,9 @@
+# ninja log v5
+3	1027	1648134942615502844	CMakeFiles/Exercise_3.dir/npc.cpp.o	ba80e312462ea661
+2	1070	1648134942659924489	CMakeFiles/Exercise_3.dir/item.cpp.o	91e9329c9d577ba9
+2	1083	1648134942669196732	CMakeFiles/Exercise_3.dir/hero.cpp.o	6ee0cca40babdddb
+1	1083	1648134942670418326	CMakeFiles/Exercise_3.dir/character.cpp.o	8756e432cca628d
+3	1089	1648134942682628185	CMakeFiles/Exercise_3.dir/sorcerer.cpp.o	8ca172d1abf0a50e
+2	1104	1648134942697144213	CMakeFiles/Exercise_3.dir/main.cpp.o	c22c9ab8e967e187
+1	1105	1648134942695654186	CMakeFiles/Exercise_3.dir/fighter.cpp.o	49e4a6b185ac873d
+1105	1195	1648134942791336598	Exercise_3	5c7d72f94630c499
