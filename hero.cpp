@@ -78,10 +78,26 @@ void Hero::sellItem(int index)
         this->getInventory(index)->setIsValid(false);
         this->setGold(this->getGold() + this->getInventory(index)->getValue());
         //this->setGold(this->getInventory(index)->getValue());
-    }
 
-    //Ausgabe einer Bestätigung über das Terminal
-    std::cout << "Der Gegenstand " << this->getInventory(index)->getName() << " wurde für " << this->getInventory(index)->getValue() << " verkauft. " << this->getName() << " besitzt nun " << this->getGold() << " Gold." << std::endl;
+        //Ausgabe einer Bestätigung über das Terminal
+        std::cout << "Der Gegenstand " << this->getInventory(index)->getName() << " wurde für " << this->getInventory(index)->getValue() << " Gold verkauft. "
+            << this->getName() << " besitzt nun " << this->getGold() << " Gold." << std::endl;
+    } else if(this->getEquipment(index)->isIsValid())
+    {
+        this->getEquipment(index)->setIsValid(false);
+        this->setGold(this->getGold() + this->getEquipment(index)->getValue());
+        //this->setGold(this->getEquipment(index)->getValue());
+
+        //Ausgabe einer Bestätigung über das Terminal
+        std::cout << "Der Gegenstand " << this->getEquipment(index)->getName() << " wurde für " << this->getEquipment(index)->getValue() << " Gold verkauft. "
+                  << this->getName() << " besitzt nun " << this->getGold() << " Gold." << std::endl;
+    }
+}
+
+Item *Hero::getEquipment(int index)
+{
+    Item &item = this->hero_gear[index];
+    return &item;
 }
 
 enumType& Hero::getType()

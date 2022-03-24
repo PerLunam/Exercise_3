@@ -35,8 +35,10 @@ void Item::setIsValid(bool newIsValid)
     this->isValid = newIsValid;
 }
 
+/*
 std::ostream& operator<<(std::ostream& out, const Item& i)
 {
     std::cout << i.getName() << " mit einem Wert von " << i.getValue() << std::endl;
     return out;
 }
+*/

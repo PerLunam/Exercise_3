@@ -51,6 +51,6 @@ class Item
 };
 
 //Operatorenüberladung des Opterators "<<"
-std::ostream& operator<<(std::ostream& out, const Item& i);
+//std::ostream& operator<<(std::ostream& out, const Item& i);
 
 #endif //EXERCISE_3_ITEM_H

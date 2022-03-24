@@ -37,7 +37,7 @@ public:
     //Destruktor
     virtual ~Sorcerer()
     {
-        std::cout << "Sorcerer " << this->getName() << " verlässt das Abenteuer und ärgert andere Helden*Innen." << std::endl;
+        std::cout << "Sorcerer " << this->getName() << " verlässt das Abenteuer und ärgert andere Held*Innen." << std::endl;
     }
 
     //----------------------------- Objektfunktionen -----------------------------

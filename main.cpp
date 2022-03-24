@@ -8,7 +8,7 @@
 
 #include "character.h"
 #include "hero.h"
-#include "npc.h"
+//#include "npc.h"
 #include "fighter.h"
 #include "sorcerer.h"
 
@@ -94,19 +94,35 @@ int main()
         std::cout << matthias.getName() << " fiel in Ohnmacht! " << annina.getName() << " hat noch " << annina.getHealth() << " Lebenspunkte." << std::endl;
         annina.retrieveRandomLoot(&matthias);
 
+        //Grafische Trennung der Inhalte
+        std::cout << "------------------------------" << std::endl;
+
         if(annina.fight(&pascal))
         {
             std::cout << pascal.getName() << " fiel in Ohnmacht! " << annina.getName() << " hat noch " << annina.getHealth() << " Lebenspunkte." << std::endl;
             annina.retrieveRandomLoot(&pascal);
 
-            for(int i = 0; i < MAX_INVENTORY_SIZE; i++)
+            //Erster Ansatz - Verwendung der "sellItem"-Funktion innerhalb einer nested Loop
+            for(int i = 0; i < MAX_INVENTORY_SIZE; ++i)
             {
-                for (int j = 0; j < MAX_EQUIPMENT_SIZE; j++)
+                for (int j = 0; j < MAX_EQUIPMENT_SIZE; ++j)
                 {
                     annina.sellItem(j);
                 }
                 annina.sellItem(i);
             }
+
+            /* Zweiter Ansatz - getrennte for-Loops
+            for(int i = 0; i < MAX_INVENTORY_SIZE; i++)
+            {
+                annina.sellItem(i);
+            }
+
+            for(int j = 0; j < MAX_EQUIPMENT_SIZE; j++)
+            {
+                annina.sellItem(j);
+            }
+            */
         }
     } else
     {

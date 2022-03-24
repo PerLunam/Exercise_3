@@ -61,6 +61,7 @@ public:
 
     //----------------------------- Getter & Setter -----------------------------
     //Werden von der Elternklasse "Character" übernommen
+    Item *getEquipment(int index);
 };
 
 //Operatorenüberladung des Opterators "<<"

@@ -11,15 +11,15 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="914e5d85-5f58-498a-878e-4a6581690c68" name="Changes" comment="First try">
+    <list default="true" id="914e5d85-5f58-498a-878e-4a6581690c68" name="Changes" comment="Second try">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/character.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/character.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/character.h" beforeDir="false" afterPath="$PROJECT_DIR$/character.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Exercise_3.dir/character.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Exercise_3.dir/character.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Exercise_3.dir/fighter.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Exercise_3.dir/fighter.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Exercise_3.dir/hero.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Exercise_3.dir/hero.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Exercise_3.dir/item.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Exercise_3.dir/item.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Exercise_3.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Exercise_3.dir/main.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Exercise_3.dir/sorcerer.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Exercise_3.dir/sorcerer.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Exercise_3" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Exercise_3" afterDir="false" />
@@ -27,9 +27,9 @@
       <change beforePath="$PROJECT_DIR$/fighter.h" beforeDir="false" afterPath="$PROJECT_DIR$/fighter.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hero.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/hero.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hero.h" beforeDir="false" afterPath="$PROJECT_DIR$/hero.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/item.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/item.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/item.h" beforeDir="false" afterPath="$PROJECT_DIR$/item.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/npc.h" beforeDir="false" afterPath="$PROJECT_DIR$/npc.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sorcerer.h" beforeDir="false" afterPath="$PROJECT_DIR$/sorcerer.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -91,12 +91,12 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.DirectoryMappings" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration name="Exercise_3" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Exercise_3" TARGET_NAME="Exercise_3" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Exercise_3" RUN_TARGET_NAME="Exercise_3">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Exercise_3" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Exercise_3" TARGET_NAME="Exercise_3" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Exercise_3" RUN_TARGET_NAME="Exercise_3">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -118,7 +118,8 @@
       <workItem from="1648046560689" duration="5670000" />
       <workItem from="1648055884421" duration="11000" />
       <workItem from="1648055936874" duration="178000" />
-      <workItem from="1648133934693" duration="4891000" />
+      <workItem from="1648133934693" duration="5002000" />
+      <workItem from="1648155618653" duration="2844000" />
     </task>
     <task id="LOCAL-00001" summary="First try">
       <created>1648135428358</created>
@@ -134,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648135448161</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Second try">
+      <created>1648139026253</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1648139026253</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,7 +181,8 @@
       <path value="$PROJECT_DIR$/../.." />
     </ignored-roots>
     <MESSAGE value="First try" />
-    <option name="LAST_COMMIT_MESSAGE" value="First try" />
+    <MESSAGE value="Second try" />
+    <option name="LAST_COMMIT_MESSAGE" value="Second try" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

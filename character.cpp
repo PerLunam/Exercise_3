@@ -59,7 +59,7 @@ Item Character::removeInventarItem(int slot)
     if(this->inventory[slot].isIsValid())
     {
         this->inventory[slot].setIsValid(false);
-        std::cout << "Das Item " << this->inventory[slot].getName() << " wurde aus dem Invenatr von " << this->getName() << " entfernt." << std::endl;
+        std::cout << "Item  \"" << this->inventory[slot].getName() << "\" wurde aus dem Inventar von " << this->getName() << " entfernt." << std::endl;
         return this->inventory[slot];
     } else
     {
@@ -77,7 +77,7 @@ Item Character::retrieveRandomLoot(Character *enemy)
     if(enemy->inventory[rndNumber].isIsValid())
     {
         //falls der Index korrekt initialisiert ist (isValid = "true"), soll das Item aus dem Inventar des Gegners entfernt ("removeInventarItem")
-        //und in das Inventar des Helden/ der Helding beigefügt werden ("addInventarItem")
+        //und in das Inventar des Helden/ der Heldin beigefügt werden ("addInventarItem")
 
         //Erster Versuch der Umsetzung, aber mit Fehler
         //this->addInventarItem(&enemy->removeInventarItem(rndNumber));
