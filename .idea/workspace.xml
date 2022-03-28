@@ -12,27 +12,11 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="914e5d85-5f58-498a-878e-4a6581690c68" name="Changes" comment="Verbesserung_1">
+    <list default="true" id="914e5d85-5f58-498a-878e-4a6581690c68" name="Changes" comment="Final_1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/character.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/character.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/character.h" beforeDir="false" afterPath="$PROJECT_DIR$/character.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-4f039986d7ed5db1a8db.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2022-03-24T15-11-16-0357.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Exercise_3.dir/character.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Exercise_3.dir/character.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Exercise_3.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Exercise_3.dir/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Exercise_3" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Exercise_3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fighter.h" beforeDir="false" afterPath="$PROJECT_DIR$/fighter.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hero.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/hero.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hero.h" beforeDir="false" afterPath="$PROJECT_DIR$/hero.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/item.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/item.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/item.h" beforeDir="false" afterPath="$PROJECT_DIR$/item.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sorcerer.h" beforeDir="false" afterPath="$PROJECT_DIR$/sorcerer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sorcerer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/sorcerer.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,11 +82,6 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -121,7 +100,8 @@
       <workItem from="1648055884421" duration="11000" />
       <workItem from="1648055936874" duration="178000" />
       <workItem from="1648133934693" duration="5002000" />
-      <workItem from="1648155618653" duration="7967000" />
+      <workItem from="1648155618653" duration="8345000" />
+      <workItem from="1648458368144" duration="5848000" />
     </task>
     <task id="LOCAL-00001" summary="First try">
       <created>1648135428358</created>
@@ -151,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648158996764</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Final_1">
+      <created>1648164064952</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1648164064952</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,7 +179,19 @@
     <MESSAGE value="First try" />
     <MESSAGE value="Second try" />
     <MESSAGE value="Verbesserung_1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Verbesserung_1" />
+    <MESSAGE value="Final_1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final_1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/main.cpp</url>
+          <line>48</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

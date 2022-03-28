@@ -62,8 +62,22 @@ Item Character::removeInventarItem(int slot)
 
 Item Character::retrieveRandomLoot(Character *enemy)
 {
+    //Initialisierung eines Counters, welcher als Zahlenbasis für die Zufallszahlgenerierung dient
+    int counter = -1;
+
+    //Für jedes ".isIsvalid == true" wird der counter um 1 erhöht
+    //Max. Wert = 9, da MAX_INVENTORY_SIZE als Array[10] also mit Index von 0 bis 9 definiert ist
+    for(int i = 0; i < MAX_INVENTORY_SIZE; i++)
+    {
+        if(enemy->inventory[i].isIsValid())
+        {
+            counter++;
+        }
+    }
+
     //Zufällige Zahl wird generiert und dient als Kriterium für die Auswahl des entsprechenden Item-Index
-    int rndNumber = rand() % (MAX_INVENTORY_SIZE + 1);
+    int rndNumber = rand() % (counter);
+    //std::cout << "Zufallszahl = " << rndNumber << std::endl;
 
     if(enemy->inventory[rndNumber].isIsValid())
     {
@@ -80,10 +94,11 @@ Item Character::retrieveRandomLoot(Character *enemy)
         //Item wird aus dem Inventar des Gegners entfernt
         enemy->removeInventarItem(rndNumber);
 
-        //Das entsprechend Item wird dem Inventar des Helden/ der Heldin beigefügt
+        //Das entsprechende Item wird dem Inventar des Helden/ der Heldin beigefügt
         this->addInventarItem(lootItem);
 
-        std::cout << "Des einen Glück, des anderen Leid. " << this->getName() << " hat sich \"" << enemy->getInventory(rndNumber)->getName() << "\" redlich verdient." << std::endl;
+        //std::cout << "Des einen Glück, des anderen Leid. " << this->getName() << " hat sich \"" << enemy->getInventory(rndNumber)->getName() << "\" redlich verdient." << std::endl;
+        std::cout << "Des einen Glück, des anderen Leid. " << this->getName() << " hat sich \"" << lootItem.getName() << "\" redlich verdient." << std::endl;
 
         //Grafische Trennung der Inhalte
         std::cout << "------------------------------" << std::endl;
